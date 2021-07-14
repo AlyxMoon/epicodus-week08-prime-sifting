@@ -7,14 +7,29 @@ namespace PrimeSifting
   {
     public static List<int> Solve (int num)
     {
-      List<int> primeNumberList = new List<int>();
+      List<int> primes = new List<int>();
 
-      for (int i = 0; i < num; i++)
-      {
-        if (IsPrime(i)) primeNumberList.Add(i);
+      if (num < 2) return primes;
+
+      bool[] sieve = new bool[num];
+      for (int i = 0; i < sieve.Length; i++) {
+        sieve[i] = true;
       }
 
-      return primeNumberList;
+      sieve[0] = false;
+      sieve[1] = false;
+      
+      for (int i = 2; i < sieve.Length; i++) {
+        if (sieve[i]) {
+          primes.Add(i);
+
+          for (int j = i + i; j < sieve.Length; j += i) {
+            sieve[j] = false;
+          }
+        }
+      }
+
+      return primes;
     }
 
     public static bool IsPrime (int num)
