@@ -56,40 +56,41 @@ namespace PrimeSifting.Tests
       Assert.AreEqual(Program.IsPrime(7793), true);
     }
 
-  //   [TestMethod]
-  //   public void Solve_GivesCorrectPrimes_WhenInputIs1 ()
-  //   {
-  //     List<int> actual = Program.Solve(1);
-  //     List<int> expected = new List<int> {};
+    [TestMethod]
+    public void Solve_GivesCorrectPrimes_WhenInputIs1 ()
+    {
+      List<int> actual = Program.Solve(1);
+      List<int> expected = new List<int> {};
 
-  //     CollectionAssert.AreEqual(actual, expected);
-  //   }
+      CollectionAssert.AreEqual(actual, expected);
+    }
 
-  //   [TestMethod]
-  //   public void Solve_GivesCorrectPrimes_WhenInputIs2 ()
-  //   {
-  //     List<int> actual = Program.Solve(2);
-  //     List<int> expected = new List<int> {};
+    [TestMethod]
+    public void Solve_GivesCorrectPrimes_WhenInputIs2 ()
+    {
+      List<int> actual = Program.Solve(2);
+      List<int> expected = new List<int> {};
 
-  //     CollectionAssert.AreEqual(actual, expected);
-  //   }
+      CollectionAssert.AreEqual(actual, expected);
+    }
 
-  //   [TestMethod]
-  //   public void Solve_GivesCorrectPrimes_WhenInputIs3 ()
-  //   {
-  //     List<int> actual = Program.Solve(3);
-  //     List<int> expected = new List<int> {2};
+    [TestMethod]
+    public void Solve_GivesCorrectPrimes_ForVariousInputs ()
+    {
+      CollectionAssert.AreEqual(
+        Program.Solve(3), 
+        new List<int> {2}
+      );
 
-  //     CollectionAssert.AreEqual(actual, expected);
-  //   }
+      CollectionAssert.AreEqual(
+        Program.Solve(4), 
+        new List<int> {2, 3}
+      );
 
-  //   [TestMethod]
-  //   public void Solve_GivesCorrectPrimes_WhenInputIs4 ()
-  //   {
-  //     List<int> actual = Program.Solve(4);
-  //     List<int> expected = new List<int> {2, 3};
-
-  //     CollectionAssert.AreEqual(actual, expected);
-  //   }
+      CollectionAssert.AreEqual(
+        Program.Solve(20), 
+        new List<int> {2, 3, 5, 7, 11, 13, 17, 19}
+      );
+    }
   }
 }

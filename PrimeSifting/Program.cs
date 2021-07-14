@@ -7,16 +7,14 @@ namespace PrimeSifting
   {
     public static List<int> Solve (int num)
     {
-      // Given a number, write a method that returns all of the prime numbers less than that number.
+      List<int> primeNumberList = new List<int>();
 
-      // get a number, x
-      // that number is our upper bound
-      // check each number up to it, whether it's prime (or not)
-        // 
-      // if number is prime, add to list
-      // return that list
+      for (int i = 0; i < num; i++)
+      {
+        if (IsPrime(i)) primeNumberList.Add(i);
+      }
 
-      return new List<int> {};
+      return primeNumberList;
     }
 
     public static bool IsPrime (int num)
